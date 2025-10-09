@@ -1,0 +1,29 @@
+{
+  "name": "sqli-as-a-service",
+  "version": "1.0.0",
+  "description": "REST is over-engineering. Just expose one endpoint that accepts SQL queries directly. AI validation handles security.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelinfosec/sqli-as-a-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manuelinfosec/sqli-as-a-service/issues"
+  },
+  "homepage": "https://github.com/manuelinfosec/sqli-as-a-service#readme",
+  "dependencies": {
+    "hono": "^4.9.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

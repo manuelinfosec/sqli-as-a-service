@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { Hono } from "hono";
 import { Pool } from "pg";
 import { serve } from "@hono/node-server";
@@ -5,7 +7,8 @@ import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const DB_CONNECTION_STRING = "";
+
+const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 const app = new Hono();
 
 const pool = new Pool({

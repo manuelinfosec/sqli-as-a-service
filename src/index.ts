@@ -6,7 +6,6 @@ import { serve } from "@hono/node-server";
 import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
-import { anthropic } from "@ai-sdk/anthropic"; // Optional: add a 3rd provider
 import { z } from "zod";
 
 const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
@@ -26,10 +25,9 @@ app.post("/query", async (c) => {
   let object;
   let success = false;
 
-  const modelsToTry = [
+  const modelsToTry: Array<{ name: string; model: any }> = [
     { name: "OpenAI", model: openai("gpt-4.5-preview") },
     { name: "Gemini", model: google("gemini-2.5-pro") },
-    { name: "Anthropic", model: anthropic("claude-3-5-sonnet-latest") },
   ];
 
   // Loop through models sequentially until one succeeds
